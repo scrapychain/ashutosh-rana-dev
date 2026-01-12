@@ -1,0 +1,6 @@
+@import "tailwindcss";
+
+/* your CRT / scanlines / custom styles below */
+:root { color-scheme: dark; }
+html { scroll-behavior: smooth; }
+body { background: #000; }
