@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo, useState } from 'react'
+import { useMemo, useState, useEffect } from 'react'
 import Nav from '@/components/Nav'
 import Hero from '@/components/Hero'
 import Section from '@/components/Section'
@@ -34,6 +34,48 @@ export default function HomeClient({ posts }: HomeClientProps) {
   const [route, setRoute] = useState<Route>('home')
   const [category, setCategory] = useState<'all' | 'rust' | 'blockchain' | 'personal'>('all')
   const [activePhase, setActivePhase] = useState(roadmap[0].id)
+
+  // Initialize route from URL hash on mount
+  useEffect(() => {
+    const hash = window.location.hash.slice(1) // Remove the #
+    if (hash) {
+      const parts = hash.split('/')
+      if (parts[0] === 'log' && parts[1]) {
+        setRoute({ post: parts[1] })
+      } else if (['home', 'roadmap', 'skills', 'log', 'manifesto'].includes(parts[0])) {
+        setRoute(parts[0] as Route)
+      }
+    }
+  }, [])
+
+  // Update URL hash when route changes
+  useEffect(() => {
+    if (typeof route === 'string') {
+      window.history.pushState(null, '', `#${route}`)
+    } else if (typeof route === 'object' && 'post' in route) {
+      window.history.pushState(null, '', `#log/${route.post}`)
+    }
+  }, [route])
+
+  // Handle browser back/forward buttons
+  useEffect(() => {
+    const handleHashChange = () => {
+      const hash = window.location.hash.slice(1)
+      if (!hash) {
+        setRoute('home')
+        return
+      }
+      const parts = hash.split('/')
+      if (parts[0] === 'log' && parts[1]) {
+        setRoute({ post: parts[1] })
+      } else if (['home', 'roadmap', 'skills', 'log', 'manifesto'].includes(parts[0])) {
+        setRoute(parts[0] as Route)
+      }
+    }
+
+    window.addEventListener('hashchange', handleHashChange)
+    return () => window.removeEventListener('hashchange', handleHashChange)
+  }, [])
 
   const now = useMemo(() => new Date(), [])
   const start = useMemo(() => new Date(START_DATE + 'T00:00:00'), [])
