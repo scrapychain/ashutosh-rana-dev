@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @keyframes jitter {
+    0%, 100% { transform: translate(0,0); }
+    20% { transform: translate(1px,-1px); }
+    40% { transform: translate(-1px,1px); }
+    60% { transform: translate(2px,0); }
+    80% { transform: translate(-2px,0); }
+  }
+
+  .animate-jitter {
+    animation: jitter 2.8s infinite steps(2, end);
+  }
+}
