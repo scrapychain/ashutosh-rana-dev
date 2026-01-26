@@ -46,7 +46,7 @@ fn main() {
 
 ## References (the "can I borrow this?" rule)
 
-A **reference** lets you use data without owning it. It's like borrowing a book from a friend—you can read it, but you don't own it.
+A **reference** lets you use data without owning it. It's like borrowing a book from a friend, you can read it, but you don't own it.
 
 There are two types of references:
 
