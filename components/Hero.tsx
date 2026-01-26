@@ -1,4 +1,4 @@
-import { Route } from '@/app/page'
+import { Route } from '@/app/HomeClient'
 import Pill from './Pill'
 import Button from './Button'
 import GlitchText from './GlitchText'

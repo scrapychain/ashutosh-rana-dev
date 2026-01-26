@@ -1,5 +1,5 @@
 import { cn } from '@/lib/utils'
-import { Route } from '@/app/page'
+import { Route } from '@/app/HomeClient'
 
 export default function Nav({
   route,
