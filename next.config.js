@@ -5,7 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/ashutosh-rana-dev' : '',
+  basePath: "/ashutosh-rana-dev",
   assetPrefix: process.env.NODE_ENV === 'production' ? '/ashutosh-rana-dev/' : '',
 }
 
