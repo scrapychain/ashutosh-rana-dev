@@ -107,7 +107,7 @@ export default function NotFound() {
               {/* Action Buttons */}
               <div className="flex flex-wrap justify-center gap-4 pt-4 font-mono">
                 <Link 
-                  href="/"
+                  href="/#home"
                   className="border border-emerald-500/50 bg-emerald-950/30 px-6 py-2.5 text-sm tracking-wider text-emerald-300 hover:bg-emerald-900/30 hover:border-emerald-400 transition-colors"
                 >
                   &gt; RETURN TO GENESIS BLOCK
