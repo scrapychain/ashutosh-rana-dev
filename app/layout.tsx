@@ -4,6 +4,7 @@ import './globals.css'
 export const metadata: Metadata = {
   title: 'Ashutosh Rana - Core Blockchain Developer',
   description: 'Building ScrapyChain - Learning Rust and blockchain from first principles',
+  viewport: 'width=device-width, initial-scale=1, maximum-scale=5',
 }
 
 export default function RootLayout({
