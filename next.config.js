@@ -5,8 +5,7 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: "/ashutosh-rana-dev",
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/ashutosh-rana-dev/' : '',
+  
 }
 
 module.exports = nextConfig
