@@ -10,7 +10,7 @@ tags:
   - collections
   - vectors
   - hashsets
-excerpt: "Collections let you store multiple values. Vec is ordered. HashSet is unique. Both follow the ownership rules from Day 1—they own their data, you borrow from them."
+excerpt: "Collections let you store multiple values. Vec is ordered. HashSet is unique. Both follow the ownership rules from Day 1, they own their data, you borrow from them."
 ---
 
 # Rust Collections: Vectors and HashSets
@@ -105,7 +105,7 @@ fn main() {
 }
 ```
 
-Use `fruits[0]` for quick access if you know the index exists. Use `.get()` when you're not sure—it returns `Option` instead of panicking.
+Use `fruits[0]` for quick access if you know the index exists. Use `.get()` when you're not sure, it returns `Option` instead of panicking.
 
 ### Iterating: Where Ownership Matters
 
@@ -353,5 +353,3 @@ This is real code you'd write: deduplicating data and checking membership.
 ## Moving Forward
 
 You now understand the two most common collections in Rust. Both apply the ownership rules from Day 1. In real projects, you'll use Vec the most (ordered data is common), but you'll reach for HashSet whenever you need fast membership checks.
-
-Next up: error handling and the `Result` type—how Rust handles things that might fail.
