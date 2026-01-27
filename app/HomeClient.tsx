@@ -77,11 +77,38 @@ export default function HomeClient({ posts }: HomeClientProps) {
     return () => window.removeEventListener('hashchange', handleHashChange)
   }, [])
 
-  const now = useMemo(() => new Date(), [])
+  const [now, setNow] = useState(() => new Date())
   const start = useMemo(() => new Date(START_DATE + 'T00:00:00'), [])
   const day = useMemo(() => daysBetween(start, now), [start, now])
   const total = 1825 // 5 years
   const pct = useMemo(() => (day / total) * 100, [day])
+
+  // Update the current time at midnight each day
+  useEffect(() => {
+    const updateTime = () => {
+      setNow(new Date())
+    }
+    
+    // Calculate milliseconds until next midnight
+    const getMillisecondsUntilMidnight = () => {
+      const now = new Date()
+      const tomorrow = new Date(now)
+      tomorrow.setDate(tomorrow.getDate() + 1)
+      tomorrow.setHours(0, 0, 0, 0)
+      return tomorrow.getTime() - now.getTime()
+    }
+    
+    // Set initial timeout to midnight
+    const msUntilMidnight = getMillisecondsUntilMidnight()
+    const midnightTimeout = setTimeout(() => {
+      updateTime()
+      // Then update every 24 hours
+      const dailyInterval = setInterval(updateTime, 24 * 60 * 60 * 1000)
+      return () => clearInterval(dailyInterval)
+    }, msUntilMidnight)
+    
+    return () => clearTimeout(midnightTimeout)
+  }, [])
 
   const filteredPosts = useMemo(() => {
     const sorted = [...posts].sort((a, b) => (a.date < b.date ? 1 : -1))
