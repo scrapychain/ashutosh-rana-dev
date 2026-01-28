@@ -402,34 +402,32 @@ export default function HomeClient({ posts }: HomeClientProps) {
               </div>
 
               {/* Pagination Navigation */}
-              <div className="mt-8 flex items-center justify-between gap-4 border-t border-emerald-400/20 pt-6">
-                <div className="flex-1">
-                  {postNavigation.prev && (
-                    <button
-                      onClick={() => setRoute({ post: postNavigation.prev!.slug })}
-                      className="group flex flex-col items-start gap-1 text-left transition-colors hover:text-emerald-200"
-                    >
-                      <span className="text-xs tracking-widest text-emerald-200/50">← PREVIOUS</span>
-                      <span className="text-sm tracking-wide text-emerald-100/80 group-hover:text-emerald-200">
-                        {postNavigation.prev.title}
-                      </span>
-                    </button>
-                  )}
-                </div>
+              <div className="mt-8 flex justify-between gap-4 border-t border-emerald-400/20 pt-6">
+                {postNavigation.prev && (
+                  <button
+                    onClick={() => setRoute({ post: postNavigation.prev!.slug })}
+                    className="group flex flex-col items-start gap-1 text-left transition-colors hover:text-emerald-200"
+                  >
+                    <span className="text-xs tracking-widest text-emerald-200/50">← PREVIOUS</span>
+                    <span className="text-sm tracking-wide text-emerald-100/80 group-hover:text-emerald-200">
+                      {postNavigation.prev.title}
+                    </span>
+                  </button>
+                )}
                 
-                <div className="flex-1 text-right">
-                  {postNavigation.next && (
-                    <button
-                      onClick={() => setRoute({ post: postNavigation.next!.slug })}
-                      className="group flex flex-col items-end gap-1 text-right transition-colors hover:text-emerald-200"
-                    >
-                      <span className="text-xs tracking-widest text-emerald-200/50">NEXT →</span>
-                      <span className="text-sm tracking-wide text-emerald-100/80 group-hover:text-emerald-200">
-                        {postNavigation.next.title}
-                      </span>
-                    </button>
-                  )}
-                </div>
+                {!postNavigation.prev && <div />}
+                
+                {postNavigation.next && (
+                  <button
+                    onClick={() => setRoute({ post: postNavigation.next!.slug })}
+                    className="group flex flex-col items-end gap-1 text-right transition-colors hover:text-emerald-200"
+                  >
+                    <span className="text-xs tracking-widest text-emerald-200/50">NEXT →</span>
+                    <span className="text-sm tracking-wide text-emerald-100/80 group-hover:text-emerald-200">
+                      {postNavigation.next.title}
+                    </span>
+                  </button>
+                )}
               </div>
             </Card>
           </Section>
