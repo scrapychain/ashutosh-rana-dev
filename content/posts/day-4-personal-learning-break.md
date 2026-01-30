@@ -1,6 +1,6 @@
 ---
 slug: personal-learning-break
-title: "Personal: Taking a Break"
+title: "Day 4: Taking a Break"
 date: 2026-01-28
 category: personal
 tags:
