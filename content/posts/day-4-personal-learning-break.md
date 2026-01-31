@@ -2,7 +2,7 @@
 slug: personal-learning-break
 title: "Day 4: Taking a Break"
 date: 2026-01-28
-category: personal
+category: personal, rust
 tags:
   - personal
   - life

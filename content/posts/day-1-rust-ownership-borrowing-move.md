@@ -37,7 +37,7 @@ Most languages handle memory in two ways:
 
 Rust does something different: **ownership**. The language tracks who owns data at compile time and automatically frees it when the owner is done. No garbage collector needed. No manual freeing.
 
-This is why Rust feels strict—it's proving your code is safe before it even runs.
+This is why Rust feels strict, it's proving your code is safe before it even runs.
 
 ---
 
@@ -295,7 +295,7 @@ Walk through this:
 
 This feels strict at first. You'll get compile errors that seem annoying.
 
-But here's the thing: **every error Rust gives you is a bug you would've had to debug later.** Use-after-free, data races, memory leaks—Rust catches them before your code even runs.
+But here's the thing: **every error Rust gives you is a bug you would've had to debug later.** Use-after-free, data races, memory leaks, Rust catches them before your code even runs.
 
 Other languages don't know who owns data. Rust does. And that's powerful.
 
