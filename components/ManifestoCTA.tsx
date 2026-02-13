@@ -18,8 +18,8 @@ export default function ManifestoCTA({ onOpen }: { onOpen: () => void }) {
             MASTER RUST. BUILD BLOCKCHAIN.
           </div>
           <p className="mt-4 max-w-3xl text-emerald-100/75">
-            I&apos;m learning both simultaneously by building ScrapyChain from scratch. Every Rust concept finds a home.
-            Every blockchain feature teaches systems programming.
+            I&apos;m learning both simultaneously by building ScrapyChain, a production-ready blockchain library from scratch.
+            Every Rust concept finds a home. Every blockchain feature teaches systems programming.
           </p>
 
           <div className="mt-6 flex flex-wrap gap-3">

@@ -11,20 +11,20 @@ export const socials = {
     label: 'Follow on GitHub', 
     handle: '@scrapychain', 
     sub: 'Watch the code evolve, commit by commit', 
-    href: 'https://github.com/scrapychain' 
+    href: 'https://github.com/scrapychain/scrapy_chain' 
   },
 }
 
 export const project = {
   name: 'ScrapyChain',
-  tagline: 'Toy blockchain in Rust',
+  tagline: 'Production-ready blockchain library in Rust',
   badge: 'BUILDING NOW',
   description:
-    'My learning vehicle for mastering Rust + blockchain tech. Building a functional toy blockchain from first principles to internalize: block structure, SHA-256 hashing, proof-of-work, transaction validation, and Merkle trees.',
+    'Building a production-ready blockchain library in Rust to master both the language and the technology. Learning by shipping real code, block structure, SHA-256 hashing, proof-of-work, transaction validation, and Merkle trees.',
   tags: ['#rust', '#blockchain-fundamentals', '#cryptography', '#learning-in-public'],
   ctas: [
-    { label: 'View Source Code', href: 'https://github.com/scrapychain/ScrapyChain' },
-    { label: 'Watch Commits', href: 'https://github.com/scrapychain/ScrapyChain/commits/main/' },
+    { label: 'View Source Code', href: 'https://github.com/scrapychain/scrapy_chain' },
+    { label: 'Watch Commits', href: 'https://github.com/scrapychain/scrapy_chain/commits/main/' },
   ],
   features: [
     { label: 'Block Structure', status: 'doing' },

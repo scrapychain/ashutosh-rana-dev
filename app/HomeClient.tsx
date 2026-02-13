@@ -345,20 +345,20 @@ export default function HomeClient({ posts }: HomeClientProps) {
         )}
 
         {route === 'manifesto' && (
-          <Section title="Manifesto" subtitle="Master Rust. Build blockchain. Learn in public.">
+          <Section title="Manifesto" subtitle="Master Rust. Ship a production-ready blockchain library. Learn in public.">
             <Card>
               <div className="text-emerald-200/80 tracking-widest">&gt; WHY THIS PATH</div>
               <div className="mt-6 space-y-5 text-emerald-100/80 leading-relaxed">
                 <p>
                   I&apos;m not learning Rust first and blockchain later. I&apos;m building both simultaneously.
-                  ScrapyChain is the lab; every feature forces a Rust concept and a blockchain primitive to live together.
+                  ScrapyChain is a production-ready blockchain library built from scratch, every feature forces a Rust concept and a blockchain primitive to live together.
                 </p>
                 <p>
-                  I&apos;m optimizing for <strong>capability</strong>, not certificates. If I can&apos;t implement it, I don&apos;t know it.
+                  I&apos;m optimizing for <strong>capability</strong>, not certificates. If I can&apos;t ship it as a library others can use, I don&apos;t know it well enough.
                   That&apos;s the rule.
                 </p>
                 <p>
-                  This site is the public log: what shipped, what broke, what I learned, and what I&apos;m building next.
+                  This site is the public log: what shipped, what broke, what I learned, and how ScrapyChain is evolving into a library you can depend on.
                 </p>
               </div>
 
