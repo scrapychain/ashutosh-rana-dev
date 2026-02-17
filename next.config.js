@@ -5,8 +5,6 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/ashutosh-rana-dev',
-  assetPrefix: '/ashutosh-rana-dev',
 }
 
 module.exports = nextConfig
