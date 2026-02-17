@@ -26,7 +26,7 @@ export default function Hero({ setRoute }: { setRoute: (r: Route) => void }) {
         </div>
 
         <div className="max-w-3xl space-y-3 text-sm sm:text-base text-emerald-100/75 leading-relaxed">
-          <p>&gt; Currently mastering Rust and blockchain by building <span className="text-emerald-200">ScrapyChain</span> ,  a toy blockchain from scratch.</p>
+          <p>&gt; Currently mastering Rust and blockchain by building <span className="text-emerald-200">ScrapyChain</span> ,  a blockchain library from scratch.</p>
           <p>&gt; No tutorials. No hand-holding. Just Rust, cryptography, and breaking things until they work.</p>
           <p>&gt; Every feature I implement teaches both Rust internals and blockchain fundamentals simultaneously.</p>
         </div>
