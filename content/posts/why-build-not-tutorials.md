@@ -10,110 +10,136 @@ tags:
   - blockchain
   - learning-strategy
   - building-in-public
-excerpt: "I’m not trying to *learn about* blockchains. I’m trying to become the kind of engineer who can build one from primitives."
+excerpt: "I'm building ScrapyChain—a blockchain library in Rust. Not to launch a token. Not to compete with L1s. To become an engineer who understands blockchain from first principles."
 ---
 
-# ScrapyChain: Becoming a Different Kind of Developer
+# Why I'm Building ScrapyChain: A Blockchain Library
 
-I'm not building ScrapyChain to "have a project." I'm building ScrapyChain to **become a different kind of developer**. The kind who doesn't just use frameworks. The kind who understands what's happening underneath. The kind who can open a protocol spec, read source code, and ship systems that don't break when reality hits. ScrapyChain is my training ground.
+I'm not building ScrapyChain to launch a token. I'm not building it to compete with Solana or Ethereum. I'm building ScrapyChain to **become a different kind of developer**. The kind who understands blockchain from the ground up. The kind who can read a protocol spec and implement it correctly. The kind who knows why certain tradeoffs matter.
+
+ScrapyChain is a blockchain library. That means others can use it to build applications. But more importantly, it means I have to get the fundamentals right.
 
 ## The Real Goal
 
-My goal isn't "learn Rust." My goal isn't "understand blockchain." My goal is to become a **core blockchain developer**, the person who can work on the hard parts:
+I want to become a **core blockchain engineer**. The kind who works on:
 
-- State and storage models
+- Storage and state models
 - Cryptographic primitives
-- P2P networking
-- Consensus mechanisms
-- Performance + safety tradeoffs
-- Debugging distributed failures without guessing
+- Hashing and merkle trees
+- Transaction validation
+- Block construction and verification
+- Chain consensus mechanisms
+- Performance without sacrificing safety
 
-That level doesn't come from watching. It comes from building.
+Building a library forces me to understand all of this deeply. A library has to be correct, composable, and maintainable. No shortcuts.
 
-## Why I'm Not Doing It the Tutorial Way
+## Why a Library, Not a Full Blockchain?
 
-Tutorials feel productive. You finish a video, copy the code, and you _feel_ like you moved forward. But the truth is brutal: **If I can't rebuild it from scratch, explain it simply, and modify it without breaking it, I didn't learn it. I borrowed it.**
+A full blockchain is too much at once. You get lost in networking, node management, consensus algorithms. You ship something without understanding it.
 
-ScrapyChain is my "no borrowing" rule. It forces me to earn every concept.
+A library is different. It forces me to:
 
-## ScrapyChain Is a Concept Magnet
+1. **Implement core primitives correctly** - hashing, signatures, merkle trees
+2. **Design clean APIs** - other developers have to use what I build
+3. **Test everything** - if the library breaks, everything built on it breaks
+4. **Understand tradeoffs** - I can't hide complexity behind abstractions
 
-A toy blockchain is the perfect trap for shallow learning. Because it pulls you into the fundamentals whether you like it or not:
+A library is smaller scope but deeper mastery. That's what I need.
 
-- **Hashing** (and why it's not "just a function")
-- **Data structures** (blocks, merkle-ish thinking, storage layout)
-- **Signatures** (what identity actually means in a system)
-- **State** (the difference between "data exists" and "data is valid")
-- **Networking** (message formats, gossip, sync, latency, partitions)
-- **Consensus** (who decides, how, and what happens when they disagree)
-- **Systems thinking** (tradeoffs, edge cases, invariants, failure modes)
+## What ScrapyChain Includes
 
-This is why ScrapyChain exists. Not because it's trendy. Because it's _inevitable_ that I'll touch the core skills.
+The library provides the building blocks for blockchain applications:
 
-## Why Rust
+- **Hashing** - SHA-256 for blocks and transactions
+- **Data structures** - Block, Transaction, Chain
+- **Cryptography** - Digital signatures, public/private keys
+- **State management** - Account balances, nonces
+- **Validation** - Transaction and block verification
+- **Chain logic** - Building and validating chains
+- **Serialization** - Converting to/from bytes for storage
 
-Rust is not "easy." And that's exactly why I want it. Rust forces me to be explicit:
+Other developers can use these primitives to build:
 
-- Who owns what
-- How memory is managed
-- When data can be mutated
-- What invariants must hold
+- Different consensus mechanisms (PoW, PoS, etc.)
+- Custom transaction types
+- Their own blockchain implementations
+- Layer 2 solutions
+- Smart contract systems
 
-In systems and blockchain work, **bugs aren't just bugs**. They become:
+## Why Rust?
 
-- Security issues
-- Chain splits
-- Corrupted state
-- Financial loss
-- Silent failures that take weeks to diagnose
+I could write this in Python or Go. But I chose Rust because:
 
-Rust trains the mindset I want: **correctness first**, performance without unsafe shortcuts.
+1. **Correctness matters** - Rust forces correctness at compile time
+2. **Blockchain needs safety** - One bug = lost funds. Rust catches them early.
+3. **Memory safety** - No segfaults, no use-after-free. Critical for production.
+4. **Performance** - Blockchain needs speed. Rust doesn't sacrifice it.
+5. **Immutability by default** - Blockchain likes immutable data. Rust defaults to it.
 
-## The Anti-Gatekeeping Mindset
+Rust is unforgiving, but that's exactly what I need. If I can build a clean library in Rust, it'll be solid.
 
-I don't want to _sound_ smart. I want to be capable. So my approach is simple:
+## Why Build in Public?
 
-- Ship primitives
-- Learn concepts in context
-- Repeat until it's obvious
+I'm shipping ScrapyChain progress daily. Here's why:
 
-No "wait until I'm ready." No "I'll start after I finish the book." No "one more tutorial." ScrapyChain is me choosing action over perfection.
+- **Accountability** - If it's public, I can't skip days
+- **Clarity** - Explaining my work forces me to understand it
+- **Feedback** - Others catch my mistakes early
+- **Documentation** - Public means well-documented
+- **Signal** - Shows I'm serious, consistent, and capable
 
-## Building in Public (and Why I'm Doing Daily Progress)
-
-Part of my discipline problem is: if nobody sees it, it's easier to quit. So I'm building ScrapyChain in public and posting progress daily because:
-
-- It creates accountability
-- It attracts people who know more than me
-- It turns learning into a visible track record
-- It forces clarity (if I can't explain it, I don't understand it)
-
-This isn't content for content's sake. This is a long-term signal:
-
-> I'm becoming the kind of engineer who shows up every day.
+This isn't marketing. It's proof of discipline.
 
 ## What ScrapyChain Is (and What It Isn't)
 
 **ScrapyChain is:**
 
-- A learning lab
-- A systems practice arena
-- A portfolio of fundamentals
-- A proof of consistency
+- A blockchain library (reusable, composable components)
+- A learning project (building to understand)
+- A reference implementation (correct, documented code)
+- A foundation for others (others can build on top)
+- A proof of capability (I built this from first principles)
 
 **ScrapyChain is _not_:**
 
-- A "Solana killer"
-- A token launch
-- A mainnet dream
-- A copy-paste clone of Bitcoin
+- A full blockchain (no networking, no consensus algorithm included)
+- A mainnet (not designed for production use)
+- A token project (no coin, no ICO)
+- A framework (you write the blockchain, not me)
+- A shortcut (I'm doing this the hard way)
 
-It's a toy chain by design, because the point is mastery, not marketing.
+## How ScrapyChain Connects to My Goals
+
+This library is a stepping stone:
+
+1. **Master Rust** - I understand ownership, borrowing, traits
+2. **Master blockchain fundamentals** - Hashing, cryptography, validation
+3. **Build capability** - I can demonstrate deep technical understanding
+4. **Understand systems** - How data flows, how validation works, where bugs hide
+5. **Build real things** - Once I have the library, I can build applications
+
+ScrapyChain proves I can:
+
+- Write production-quality code
+- Understand complex domains deeply
+- Communicate technical ideas clearly
+- Build something useful
+- Persist through difficulty
+
+## Why This Matters
+
+The blockchain space is full of people who understand theory but can't code. And coders who can ship but don't understand what they're shipping.
+
+ScrapyChain is my answer to both. It's building + learning + understanding all at once.
+
+I'm not trying to be the next Vitalik. I'm trying to be the kind of engineer Vitalik needs—someone who can read a spec, understand the tradeoffs, and implement it correctly.
 
 ## The Bigger Picture
 
-I'm building ScrapyChain because I'm serious about the future I want. I don't want to stay stuck in surface-level development forever. I want to work on real protocols, real infra, real distributed systems. ScrapyChain is the start of that path.
+In the future, I want to work on real blockchain infrastructure. Building core protocols. Working on cryptography problems. Contributing to the systems that power blockchain networks.
 
-And I'm going to keep showing up until the fundamentals become instinct.
+ScrapyChain is how I build that capability. Not with theory. Not with ideas. With working, tested, documented code.
 
-Because I'm not collecting notes. I'm collecting **capabilities**.
+And I'm going to keep showing up every day until it's done.
+
+Because I'm not collecting notes. I'm not collecting certificates. I'm collecting **capabilities**.
