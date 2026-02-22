@@ -10,7 +10,7 @@ tags:
   - blockchain
   - learning-strategy
   - building-in-public
-excerpt: "I'm building ScrapyChain—a blockchain library in Rust. Not to launch a token. Not to compete with L1s. To become an engineer who understands blockchain from first principles."
+excerpt: "I'm building ScrapyChain, a blockchain library in Rust. Not to launch a token. Not to compete with L1s. To become an engineer who understands blockchain from first principles."
 ---
 
 # Why I'm Building ScrapyChain: A Blockchain Library
