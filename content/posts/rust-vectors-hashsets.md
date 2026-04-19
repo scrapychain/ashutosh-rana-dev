@@ -1,6 +1,6 @@
 ---
-slug: day-2-rust-vectors-hashsets
-title: "Day 2: Vectors and HashSets"
+slug: rust-vectors-hashsets
+title: "Vectors and HashSets"
 date: 2026-01-26
 readTime: 7 min
 category: rust

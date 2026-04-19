@@ -1,6 +1,6 @@
 ---
-slug: day-1-rust-ownership-borrowing-move
-title: "Day 1: Ownership, References, Borrowing, and Move"
+slug: rust-ownership-borrowing-move
+title: "Ownership, References, Borrowing, and Move"
 date: 2026-01-25
 readTime: 8 min
 category: rust

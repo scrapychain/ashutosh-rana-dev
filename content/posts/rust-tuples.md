@@ -1,6 +1,6 @@
 ---
-slug: day-7-rust-tuples
-title: "Day 7 Understanding Tuples"
+slug: rust-tuples
+title: "Understanding Tuples"
 date: 2026-01-31
 readTime: 6 min
 category: rust

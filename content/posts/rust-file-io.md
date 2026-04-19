@@ -1,6 +1,6 @@
 ---
-slug: day-14-rust-file-io
-title: "Day 14: File I/O and Input/Output"
+slug: rust-file-io
+title: "File I/O and Input/Output"
 date: 2026-02-07
 readTime: 11 min
 category: rust

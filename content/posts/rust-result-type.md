@@ -1,6 +1,6 @@
 ---
-slug: day-10-rust-result-type
-title: "Day 10: Understanding the Result Type"
+slug: rust-result-type
+title: "Understanding the Result Type"
 date: 2026-02-03
 readTime: 10 min
 category: rust

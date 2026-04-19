@@ -1,6 +1,6 @@
 ---
-slug: day-3-rust-iterators
-title: "Day 3: Iterators and Methods"
+slug: rust-iterators
+title: "Iterators and Methods"
 date: 2026-01-27
 readTime: 8 min
 category: rust

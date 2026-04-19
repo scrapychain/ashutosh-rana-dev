@@ -1,6 +1,6 @@
 ---
-slug: day-15-personal-five-years-going-nowhere
-title: "Day 15 Personal: Five Years of Going Nowhere"
+slug: personal-five-years-going-nowhere
+title: "Personal: Five Years of Going Nowhere"
 date: 2026-02-08
 category: personal
 tags:

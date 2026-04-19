@@ -1,6 +1,6 @@
 ---
-slug: day-29-rust-ranges
-title: "Day 29: Understanding Range Types in Rust"
+slug: rust-ranges
+title: "Understanding Range Types in Rust"
 date: 2026-02-20
 readTime: 10 min
 category: rust

@@ -1,6 +1,6 @@
 ---
-slug: day-32-rust-str-type
-title: "Day 32: Understanding the str Type in Rust"
+slug: rust-str-type
+title: "Understanding the str Type in Rust"
 date: 2026-02-25
 readTime: 9 min
 category: rust

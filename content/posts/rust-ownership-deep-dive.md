@@ -1,6 +1,6 @@
 ---
-slug: day-31-rust-ownership-deep-dive
-title: "Day 31: Ownership & Borrowing in Rust Deep Dive"
+slug: rust-ownership-deep-dive
+title: "Ownership & Borrowing in Rust Deep Dive"
 date: 2026-02-24
 readTime: 14 min
 category: rust

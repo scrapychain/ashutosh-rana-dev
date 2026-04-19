@@ -1,6 +1,6 @@
 ---
-slug: day-6-rust-traits
-title: "Day 6: Introduction to Traits"
+slug: rust-traits
+title: "Introduction to Traits"
 date: 2026-01-30
 readTime: 5 min
 category: rust

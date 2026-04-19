@@ -1,6 +1,6 @@
 ---
-slug: day-30-rust-collect
-title: "Day 30: Understanding collect() in Rust"
+slug: rust-collect
+title: "Understanding collect() in Rust"
 date: 2026-02-23
 readTime: 12 min
 category: rust

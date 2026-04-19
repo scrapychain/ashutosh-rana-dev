@@ -1,6 +1,6 @@
 ---
-slug: day-5-rust-stack-vs-heap
-title: "Day 5: Stack vs Heap (How Rust Stores Data)"
+slug: rust-stack-vs-heap
+title: "Stack vs Heap (How Rust Stores Data)"
 date: 2026-01-29
 readTime: 9 min
 category: rust

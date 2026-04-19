@@ -1,6 +1,6 @@
 ---
-slug: day-19-rust-hashmap
-title: "Day 19: Understanding HashMap in Rust"
+slug: rust-hashmap
+title: "Understanding HashMap in Rust"
 date: 2026-02-12
 readTime: 11 min
 category: rust

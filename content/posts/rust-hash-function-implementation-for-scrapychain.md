@@ -1,6 +1,6 @@
 ---
-slug: day-17-rust-hash-function
-title: "Day 17: Implementing a Hash Function in Rust"
+slug: rust-hash-function
+title: "Implementing a Hash Function in Rust"
 date: 2026-02-10
 readTime: 10 min
 category: rust

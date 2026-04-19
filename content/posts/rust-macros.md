@@ -1,6 +1,6 @@
 ---
-slug: day-16-rust-macros
-title: "Day 16: Understanding Macros in Rust"
+slug: rust-macros
+title: "Understanding Macros in Rust"
 date: 2026-02-09
 readTime: 11 min
 category: rust

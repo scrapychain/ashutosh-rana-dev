@@ -1,6 +1,6 @@
 ---
-slug: day-13-rust-error-handling
-title: "Day 13: Error Handling Best Practices"
+slug: rust-error-handling
+title: "Error Handling Best Practices"
 date: 2026-02-06
 readTime: 12 min
 category: rust

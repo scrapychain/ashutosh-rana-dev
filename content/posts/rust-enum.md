@@ -1,6 +1,6 @@
 ---
-slug: day-11-rust-enums
-title: "Day 11: Understanding Enums"
+slug: rust-enums
+title: "Understanding Enums"
 date: 2026-02-04
 readTime: 10 min
 category: rust

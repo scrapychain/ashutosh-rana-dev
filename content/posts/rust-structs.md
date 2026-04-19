@@ -1,6 +1,6 @@
 ---
-slug: day-9-rust-structs
-title: "Day 9: Understanding Structs"
+slug: rust-structs
+title: "Understanding Structs"
 date: 2026-02-02
 readTime: 10 min
 category: rust

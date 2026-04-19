@@ -1,6 +1,6 @@
 ---
-slug: day-12-rust-pattern-matching
-title: "Day 12: Pattern Matching - From Beginner to Advanced"
+slug: rust-pattern-matching
+title: "Pattern Matching - From Beginner to Advanced"
 date: 2026-02-05
 readTime: 12 min
 category: rust

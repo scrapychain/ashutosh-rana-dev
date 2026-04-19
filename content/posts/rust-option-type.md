@@ -1,6 +1,6 @@
 ---
-slug: day-8-rust-option-type
-title: "Day 8: Understanding the Option Type"
+slug: rust-option-type
+title: "Understanding the Option Type"
 date: 2026-02-01
 readTime: 8 min
 category: rust

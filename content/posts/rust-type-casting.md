@@ -1,6 +1,6 @@
 ---
-slug: day-18-rust-type-casting
-title: "Day 18: Type Casting and Safe Conversions"
+slug: rust-type-casting
+title: "Type Casting and Safe Conversions"
 date: 2026-02-11
 readTime: 12 min
 category: rust
