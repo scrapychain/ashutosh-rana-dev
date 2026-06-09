@@ -38,4 +38,28 @@ export const bytes: RustByte[] = [
       'Rust gives you C-level performance with compile-time guarantees against whole classes of memory and concurrency bugs.',
     tags: ['intro', 'overview', 'beginner'],
   },
+  {
+    id: 'where-rust-is-used',
+    title: 'Where is Rust used in industry?',
+    concept: 'Ecosystem · Industry Use',
+    file: 'where_rust_runs.rs',
+    code: `// Production Rust, grouped by where it ships:
+const RUST_IN_PROD: &[(&str, &str)] = &[
+    ("Systems", "Linux, Android, Windows"),
+    ("Cloud", "AWS Firecracker, Cloudflare"),
+    ("Databases", "TiKV, Materialize"),
+    ("Web backend", "Discord, Dropbox, npm"),
+    ("Blockchain", "Solana, Polkadot"),
+    ("CLI tools", "ripgrep, fd, bat"),
+];
+
+fn main() {
+    for (domain, who) in RUST_IN_PROD {
+        println!("{domain}: {who}");
+    }
+}`,
+    takeaway:
+      'From kernels to cloud to CLIs, Rust shows up wherever speed and reliability both matter without a garbage collector.',
+    tags: ['industry', 'ecosystem', 'overview'],
+  },
 ]
