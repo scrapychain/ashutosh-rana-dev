@@ -1,17 +1,10 @@
 import { MetadataRoute } from 'next'
-import { getAllPosts } from '@/lib/posts'
+
+// Deploy host (GitHub Pages). The site is now a single page with hash-routed
+// sections, so the sitemap just points at the root.
+const baseUrl = 'https://scrapychain.github.io/ashutosh-rana-dev'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://scrapychain.github.io/ashutosh-rana-dev'
-  const posts = getAllPosts()
-
-  const postUrls = posts.map((post) => ({
-    url: `${baseUrl}/log/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.8,
-  }))
-
   return [
     {
       url: baseUrl,
@@ -19,12 +12,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: 'weekly',
       priority: 1,
     },
-    {
-      url: `${baseUrl}/log`,
-      lastModified: new Date(),
-      changeFrequency: 'weekly',
-      priority: 0.9,
-    },
-    ...postUrls,
   ]
 }

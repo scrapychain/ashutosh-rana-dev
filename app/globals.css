@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-black font-mono text-emerald-100 antialiased;
+  }
+
+  ::selection {
+    background-color: rgba(16, 185, 129, 0.3);
+    color: rgb(209 250 229);
+  }
+}
+
 @layer utilities {
   @keyframes jitter {
     0%, 100% { transform: translate(0,0); }
@@ -13,5 +28,16 @@
 
   .animate-jitter {
     animation: jitter 2.8s infinite steps(2, end);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .animate-jitter,
+  .animate-pulse {
+    animation: none;
   }
 }

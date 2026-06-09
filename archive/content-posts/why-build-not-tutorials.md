@@ -132,7 +132,7 @@ The blockchain space is full of people who understand theory but can't code. And
 
 ScrapyChain is my answer to both. It's building + learning + understanding all at once.
 
-I'm not trying to be the next Vitalik. I'm trying to be the kind of engineer Vitalik needs—someone who can read a spec, understand the tradeoffs, and implement it correctly.
+I'm not trying to be the next Vitalik. I'm trying to be the kind of engineer Vitalik needs, someone who can read a spec, understand the tradeoffs, and implement it correctly.
 
 ## The Bigger Picture
 

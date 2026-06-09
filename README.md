@@ -1,67 +1,65 @@
-# Ashutosh Rana - Personal Portfolio
+# Ashutosh Rana - Personal Site
 
-A terminal/cypherpunk aesthetic personal website built with Next.js, TypeScript, and Tailwind CSS.
+A retro-CRT terminal personal site built with Next.js, TypeScript, and Tailwind CSS.
+Two streams of signal, nothing else:
 
-## Features
+- **Rust Bytes**: bite-sized snippets and concepts from the Rust handbook.
+- **Corporate Log**: pragmatic lessons from 4 years of corporate software engineering.
 
-- 🦀 Terminal-style design with glitch effects
-- ⛓️ Project showcase for ScrapyChain blockchain
-- 📊 Skills tracking and roadmap visualization
-- 📝 Build log with markdown support
-- 🎨 Dark theme with emerald/green terminal aesthetic
-- 📱 Fully responsive design
+## Aesthetic
+
+Pure-black background with an emerald-green phosphor hierarchy, three stacked CRT
+overlays (radial blueprint grid, scanlines, fractal-noise grain), monospace type,
+wide `tracking-widest` readouts, and a glitch effect on the brand name.
 
 ## Tech Stack
 
-- **Framework:** Next.js 14
+- **Framework:** Next.js 14 (static export)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS
-- **Content:** Markdown files with frontmatter
 
 ## Getting Started
 
-1. Install dependencies:
-
 ```bash
 npm install
-```
-
-2. Run the development server:
-
-```bash
 npm run dev
 ```
 
-3. Open [http://localhost:3000](http://localhost:3000) in your browser
+Open [http://localhost:3000](http://localhost:3000).
 
 ## Project Structure
 
 ```
 ├── app/
-│   ├── layout.tsx       # Root layout
-│   ├── page.tsx         # Main page with routing
-│   └── globals.css      # Global styles
-├── components/          # Reusable UI components
-├── content/
-│   └── posts/          # Markdown blog posts
+│   ├── layout.tsx          # Root layout + metadata
+│   ├── page.tsx            # Renders HomeClient
+│   ├── HomeClient.tsx      # Hash-routed SPA shell (hero + feed + about)
+│   ├── not-found.tsx       # Terminal 404
+│   └── globals.css         # Base styles + glitch keyframes
+├── components/
+│   ├── Hero.tsx            # Terminal welcome screen
+│   ├── Feed.tsx            # Dual-feed layout + filter tabs + empty states
+│   ├── RustByteCard.tsx    # Terminal-framed code-snippet card
+│   ├── CorporateLogCard.tsx# Text log entry with "lesson" callout
+│   ├── RustCode.tsx        # Dependency-free Rust syntax highlighter
+│   └── ...                 # CRT overlays, Nav, Footer, primitives
 ├── data/
-│   └── siteData.ts     # Site content and configuration
-└── lib/
-    └── utils.ts        # Utility functions
+│   ├── siteData.ts         # Profile + socials
+│   ├── bytes.ts            # Rust Bytes entries
+│   └── logs.ts             # Corporate Log entries
+└── archive/                # Previous "ScrapyChain" version (not imported)
 ```
 
-## Customization
+## Adding Content
 
-1. **Update personal info:** Edit `data/siteData.ts`
-2. **Add blog posts:** Create `.md` files in `content/posts/`
-3. **Modify colors:** Update Tailwind classes in components
-4. **Change start date:** Update `START_DATE` in `data/siteData.ts`
+- **Rust Byte:** append a `RustByte` object to `bytes` in `data/bytes.ts`.
+- **Corporate Log entry:** append a `CorporateLog` object to `logs` in `data/logs.ts`.
+- **Blank slate:** empty either array, and the feed renders a graceful empty state.
 
-## Build for Production
+## Build
 
 ```bash
-npm run build
-npm start
+npm run build   # static export to ./out
 ```
 
 ## License

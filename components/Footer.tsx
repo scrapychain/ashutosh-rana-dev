@@ -1,12 +1,15 @@
-export default function Footer({ blockHeight, total }: { blockHeight: number; total: number }) {
+import { profile } from '@/data/siteData'
+
+export default function Footer() {
+  const year = new Date().getFullYear()
   return (
     <footer className="mt-12 border-t border-emerald-400/15 pt-8 text-sm">
       <div className="flex flex-wrap items-center justify-between gap-4 text-emerald-200/60">
-        <div className="tracking-widest">&gt; Building in public since Day 0</div>
-        <div className="tracking-widest">BLOCK #{blockHeight} / {total}</div>
+        <div className="tracking-widest">&gt; small, honest signal</div>
+        <div className="tracking-widest">RUST_BYTES // CORPORATE_LOG // PROJECTS</div>
       </div>
-      <div className="mt-4 text-center text-emerald-200/50 tracking-widest">
-        © 2025 ASHUTOSH RANA · BLOCKCHAIN ENTHUSIAST · OPEN SOURCE EVERYTHING
+      <div className="mt-4 text-center tracking-widest text-emerald-200/50">
+        © {year} {profile.fullName.toUpperCase()} · {profile.role.toUpperCase()} · LEARNING IN PUBLIC
       </div>
     </footer>
   )

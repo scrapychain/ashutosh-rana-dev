@@ -2,8 +2,9 @@ import type { Metadata, Viewport } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'Ashutosh Rana - Core Blockchain Developer',
-  description: 'Building ScrapyChain - Learning Rust and blockchain from first principles',
+  title: 'Ashutosh Rana - Software Engineer',
+  description:
+    'Rust Bytes and a Corporate Log: bite-sized Rust from the handbook, plus pragmatic lessons from 4 years of corporate software engineering.',
 }
 
 export const viewport: Viewport = {

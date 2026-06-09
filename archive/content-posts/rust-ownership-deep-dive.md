@@ -25,7 +25,7 @@ When you assign a value to another variable, one of two things happens: it eithe
 
 ### Copy Types
 
-Types stored entirely on the stack — `i32`, `bool`, `char`, `f64`, `usize` — are copied on assignment. Both the original and the new variable stay valid.
+Types stored entirely on the stack - `i32`, `bool`, `char`, `f64`, `usize` - are copied on assignment. Both the original and the new variable stay valid.
 
 ```rust
 fn main() {
@@ -41,7 +41,7 @@ fn main() {
 
 ### Non-Copy Types (Move Semantics)
 
-Types that own heap memory — `String`, `Vec<T>`, `HashSet<T>` — are moved on assignment. The original is invalidated.
+Types that own heap memory - `String`, `Vec<T>`, `HashSet<T>` - are moved on assignment. The original is invalidated.
 
 ```rust
 fn main() {
@@ -59,12 +59,12 @@ You have two ways to fix this:
 
 ```rust
 fn main() {
-    // Option 1: Clone — makes an independent copy
+    // Option 1: Clone - makes an independent copy
     let s1 = String::from("hello");
     let s2 = s1.clone();
     println!("{s1} {s2}"); // ✅ both valid
 
-    // Option 2: Borrow — s2 points to s1, doesn't own it
+    // Option 2: Borrow - s2 points to s1, doesn't own it
     let s1 = String::from("hello");
     let s2 = &s1;
     println!("{s1} {s2}"); // ✅ both valid
@@ -163,7 +163,7 @@ For Copy types like `i32`, indexing just works because Rust copies the value sil
 ```rust
 fn main() {
     let v = vec![10, 20, 30];
-    let x: i32 = v[1]; // ✅ i32 is Copy — Rust copies it automatically
+    let x: i32 = v[1]; // ✅ i32 is Copy - Rust copies it automatically
     let r: &i32 = &v[1]; // ✅ or just borrow it
 }
 ```
@@ -206,12 +206,12 @@ fn main() {
     let s = String::from("hello");
     let r = &s;
 
-    println!("{}", r.len()); // ✅ auto-deref — no * needed
+    println!("{}", r.len()); // ✅ auto-deref - no * needed
     println!("{r}");         // ✅ auto-deref in format macros
 
     let v = vec![1, 2, 3];
     let rv = &v;
-    let elem = rv[0]; // ✅ auto-deref — Rust figures out the indexing
+    let elem = rv[0]; // ✅ auto-deref - Rust figures out the indexing
 }
 ```
 
@@ -221,12 +221,12 @@ This is the detail people miss. Whether `*` works depends on whether the type is
 
 ```rust
 fn main() {
-    // Copy type — deref and copy works fine
+    // Copy type - deref and copy works fine
     let x: i32 = 5;
     let r: &i32 = &x;
     let y: i32 = *r; // ✅ i32 is Copy
 
-    // Non-Copy type — deref to move is FORBIDDEN
+    // Non-Copy type - deref to move is FORBIDDEN
     let s = String::from("hello");
     let r: &String = &s;
     // let owned: String = *r; // ❌ can't move out of a shared reference
@@ -234,7 +234,7 @@ fn main() {
 }
 ```
 
-When you dereference a non-Copy type, Rust would need to move the value — but the original owner still exists, so it refuses.
+When you dereference a non-Copy type, Rust would need to move the value - but the original owner still exists, so it refuses.
 
 ## Iterators: iter, iter_mut, into_iter
 
@@ -246,7 +246,7 @@ These three methods give you different levels of access to a collection.
 .into_iter() → T      → consumes (moves) the collection
 ```
 
-### iter() — Read Only
+### iter() - Read Only
 
 ```rust
 fn main() {
@@ -263,7 +263,7 @@ fn main() {
 }
 ```
 
-### iter_mut() — Modify In Place
+### iter_mut() - Modify In Place
 
 ```rust
 fn main() {
@@ -287,13 +287,13 @@ fn main() {
 }
 ```
 
-### into_iter() — Take Ownership
+### into_iter() - Take Ownership
 
 ```rust
 fn main() {
     let v = vec![String::from("a"), String::from("b")];
     for s in v.into_iter() {
-        // s is String — you own it
+        // s is String - you own it
         let upper = s.to_uppercase();
         println!("{upper}");
     }
@@ -301,7 +301,7 @@ fn main() {
 }
 ```
 
-For Copy types, `into_iter()` copies each element — but the collection itself is still consumed.
+For Copy types, `into_iter()` copies each element - but the collection itself is still consumed.
 
 ### Nested Loops
 
@@ -312,7 +312,7 @@ fn main() {
         vec![4, 5, 6],
     ];
 
-    // Borrow everything — matrix stays intact
+    // Borrow everything - matrix stays intact
     for row in &matrix {      // row: &Vec<i32>
         for val in row {      // val: &i32
             print!("{val} ");
@@ -340,13 +340,13 @@ When iterating with closures, the parameter type matters.
 fn main() {
     let nums = vec![1, 2, 3];
 
-    // x is &i32 — you need *x for arithmetic
+    // x is &i32 - you need *x for arithmetic
     let sum = nums.iter().fold(0, |acc, x| acc + *x); // ✅
 
-    // |&x| destructures the reference — x becomes i32 directly
+    // |&x| destructures the reference - x becomes i32 directly
     let sum = nums.iter().fold(0, |acc, &x| acc + x); // ✅
 
-    // For non-Copy types, you can't destructure — keep x as &String
+    // For non-Copy types, you can't destructure - keep x as &String
     let strs = vec![String::from("a"), String::from("b")];
     strs.iter().for_each(|s| println!("{s}")); // s is &String ✅
     // strs.iter().for_each(|&s| println!("{s}")); // ❌ can't move out of &String
@@ -381,7 +381,7 @@ Non-Copy type through &T?  → You CANNOT move; borrow or .clone()
 
 ## Key Takeaway
 
-Ownership, borrowing, and references are not separate concepts — they're one system. Every rule flows from a single idea: each value has exactly one owner, and the compiler enforces this at compile time so you never have to at runtime.
+Ownership, borrowing, and references are not separate concepts - they're one system. Every rule flows from a single idea: each value has exactly one owner, and the compiler enforces this at compile time so you never have to at runtime.
 
 The patterns repeat everywhere:
 
