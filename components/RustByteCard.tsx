@@ -1,11 +1,23 @@
+'use client'
+
+import { useState } from 'react'
 import RustCode from './RustCode'
 import type { RustByte } from '@/data/bytes'
 
 export default function RustByteCard({ byte }: { byte: RustByte }) {
+  const [open, setOpen] = useState(false)
+  const regionId = `byte-code-${byte.id}`
+
   return (
     <article className="group flex min-w-0 flex-col border border-emerald-500/25 bg-emerald-500/[0.04] shadow-[0_0_35px_rgba(16,185,129,0.07)] transition hover:border-emerald-400/45 hover:shadow-[0_0_50px_rgba(16,185,129,0.12)]">
-      {/* Terminal title bar */}
-      <div className="flex items-center gap-3 border-b border-emerald-500/20 bg-black/40 px-4 py-2.5">
+      {/* Terminal title bar — toggles the code */}
+      <button
+        type="button"
+        onClick={() => setOpen((o) => !o)}
+        aria-expanded={open}
+        aria-controls={regionId}
+        className="flex items-center gap-3 border-b border-emerald-500/20 bg-black/40 px-4 py-2.5 text-left transition hover:bg-black/60 focus:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-emerald-300/40"
+      >
         <span aria-hidden className="flex gap-1.5">
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/30" />
           <span className="h-2.5 w-2.5 rounded-full bg-emerald-500/50" />
@@ -14,18 +26,14 @@ export default function RustByteCard({ byte }: { byte: RustByte }) {
         <span className="truncate font-mono text-xs tracking-wide text-emerald-200/70">
           {byte.file}
         </span>
-        <span className="ml-auto select-none font-mono text-[10px] tracking-widest text-emerald-300/70">
-          RUST
+        <span className="ml-auto flex shrink-0 items-center gap-1.5 font-mono text-[10px] tracking-widest text-emerald-300/70">
+          <span aria-hidden>{open ? '▾' : '▸'}</span>
+          {open ? 'HIDE CODE' : 'VIEW CODE'}
         </span>
-      </div>
+      </button>
 
-      {/* Code block */}
-      <div className="bg-black/70">
-        <RustCode code={byte.code} />
-      </div>
-
-      {/* Meta + takeaway */}
-      <div className="flex flex-1 flex-col gap-3 border-t border-emerald-500/15 px-4 py-4">
+      {/* Always-visible summary */}
+      <div className="flex flex-col gap-2 px-4 py-4">
         <div className="text-[11px] tracking-widest text-emerald-300/70">
           &gt; {byte.concept.toUpperCase()}
         </div>
@@ -49,6 +57,13 @@ export default function RustByteCard({ byte }: { byte: RustByte }) {
           </ul>
         )}
       </div>
+
+      {/* Collapsible code */}
+      {open && (
+        <div id={regionId} className="border-t border-emerald-500/15 bg-black/70">
+          <RustCode code={byte.code} />
+        </div>
+      )}
     </article>
   )
 }
