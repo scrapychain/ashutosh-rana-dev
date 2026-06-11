@@ -39,6 +39,43 @@ export const bytes: RustByte[] = [
     tags: ['intro', 'overview', 'beginner'],
   },
   {
+    id: 'key-features',
+    title: 'Key features of Rust',
+    concept: 'Rust Handbook · Ch 1',
+    file: 'key_features.rs',
+    code: `// The handbook names four things that make Rust stand out.
+// So let's pattern-match on them, the book's own example of expressiveness.
+enum Feature {
+    Expressiveness,
+    MemorySafety,
+    Concurrency,
+    Performance,
+}
+
+fn describe(f: Feature) -> &'static str {
+    match f {
+        Feature::Expressiveness => "clear code, strong types, pattern matching",
+        Feature::MemorySafety => "compile-time checks, no null, no GC",
+        Feature::Concurrency => "fearless threads, async/await, no data races",
+        Feature::Performance => "C and C++ speed, zero-cost abstractions",
+    }
+}
+
+fn main() {
+    for f in [
+        Feature::Expressiveness,
+        Feature::MemorySafety,
+        Feature::Concurrency,
+        Feature::Performance,
+    ] {
+        println!("{}", describe(f));
+    }
+}`,
+    takeaway:
+      'The four pillars the handbook highlights: expressive syntax and types, compile-time memory safety, fearless concurrency, and C-level performance, with no garbage collector and no runtime overhead.',
+    tags: ['features', 'overview', 'beginner'],
+  },
+  {
     id: 'where-rust-is-used',
     title: 'Where is Rust used in industry?',
     concept: 'Ecosystem · Industry Use',
