@@ -76,6 +76,60 @@ fn main() {
     tags: ['features', 'overview', 'beginner'],
   },
   {
+    id: 'static-data-types',
+    title: 'Static data types',
+    concept: 'Static Typing · Scalars',
+    file: 'data_types.rs',
+    code: `fn main() {
+    // Rust is statically typed: every type is known at compile time.
+    let count: i32 = 42;     // signed 32-bit integer (the default)
+    let ratio: f64 = 3.14;   // 64-bit floating point
+    let active: bool = true; // boolean
+    let grade: char = 'A';   // Unicode scalar value, 4 bytes
+
+    // Annotations are usually optional; the compiler infers the type:
+    let inferred = 7u8;      // u8, taken from the suffix
+
+    println!("{count} {ratio} {active} {grade} {inferred}");
+
+    // A type mismatch is caught before the program ever runs:
+    // let wrong: i32 = "nope"; // error[E0308]: mismatched types
+}`,
+    takeaway:
+      'Rust fixes the type of every value at compile time. The scalar types are integers, floats, bool, and char, with inference filling in the obvious cases and mismatches rejected before runtime.',
+    tags: ['types', 'static-typing', 'beginner'],
+  },
+  {
+    id: 'str-type',
+    title: 'The &str type',
+    concept: 'Strings · &str',
+    file: 'str_type.rs',
+    code: `fn main() {
+    // A string literal is a &str: a borrowed, immutable view into UTF-8 bytes.
+    let greeting: &str = "hello, rust";
+
+    // Borrow a &str slice out of an owned String:
+    let owned = String::from("hello, world");
+    let hello: &str = &owned[0..5]; // "hello"
+
+    // first_word takes &str, so it accepts a literal and a &String alike:
+    println!("{hello}");
+    println!("{}", first_word(greeting));
+    println!("{}", first_word(&owned));
+}
+
+// Borrow in, borrow out: no allocation, no ownership taken.
+fn first_word(s: &str) -> &str {
+    match s.find(' ') {
+        Some(i) => &s[..i],
+        None => s,
+    }
+}`,
+    takeaway:
+      'A &str is a borrowed, immutable view into UTF-8 text: a pointer plus a length. String literals are &str, you can slice one out of a String, and taking &str in function signatures lets them accept both.',
+    tags: ['strings', 'slices', 'borrowing'],
+  },
+  {
     id: 'where-rust-is-used',
     title: 'Where is Rust used in industry?',
     concept: 'Ecosystem · Industry Use',
