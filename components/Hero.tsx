@@ -19,7 +19,7 @@ export default function Hero({
           <span aria-hidden>{'>'}</span>
           {profile.role.toUpperCase()} · {profile.yearsExperience}Y CORPORATE
         </Pill>
-        <div className="text-xs tracking-widest text-emerald-200/60">&gt; INITIALIZING...</div>
+        <div className="text-xs tracking-widest text-emerald-200/60">&gt; SYSTEM READY_</div>
       </div>
 
       <div className="grid gap-10 lg:grid-cols-[minmax(0,1fr)_300px] lg:items-center lg:gap-14">
@@ -44,13 +44,13 @@ export default function Hero({
 
           {/* Two-stream readout */}
           <dl className="grid max-w-2xl gap-3 pt-1 sm:grid-cols-2">
-            <div className="border border-emerald-500/25 bg-emerald-500/5 px-4 py-3">
+            <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-4 py-3">
               <dt className="text-[11px] tracking-[0.25em] text-emerald-300/80">RUST_BYTES</dt>
               <dd className="mt-1 text-sm text-emerald-100/75">
                 Bite-sized snippets &amp; concepts from the Rust handbook.
               </dd>
             </div>
-            <div className="border border-emerald-500/25 bg-emerald-500/5 px-4 py-3">
+            <div className="rounded-lg border border-emerald-500/25 bg-emerald-500/5 px-4 py-3">
               <dt className="text-[11px] tracking-[0.25em] text-emerald-300/80">CORPORATE_LOG</dt>
               <dd className="mt-1 text-sm text-emerald-100/75">
                 Pragmatic lessons from {profile.yearsExperience} years shipping in production.

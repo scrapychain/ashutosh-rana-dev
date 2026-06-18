@@ -13,7 +13,7 @@ export default function Button({
   onClick?: () => void
 }) {
   const base =
-    'inline-flex items-center justify-center gap-2 px-4 py-3 text-sm tracking-widest transition focus:outline-none focus:ring-2 focus:ring-emerald-300/40'
+    'inline-flex items-center justify-center gap-2 rounded-md px-4 py-3 text-sm tracking-widest transition focus:outline-none focus:ring-2 focus:ring-emerald-300/40'
   const solid =
     'bg-emerald-400 text-black hover:bg-emerald-300 shadow-[0_0_22px_rgba(16,185,129,0.18)]'
   const outline =

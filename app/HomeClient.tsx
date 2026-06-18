@@ -101,7 +101,11 @@ export default function HomeClient() {
         )}
 
         {route === 'projects' && (
-          <Section title="Projects" subtitle="What I'm building right now.">
+          <Section
+            title="Projects"
+            subtitle="Shipped things, not screenshots. What it does, what it's built on, where it runs."
+            annotation="// the proof of work"
+          >
             <div className="grid gap-6 md:grid-cols-2">
               {projects.map((p, i) => (
                 <ProjectCard key={p.id} project={p} index={i} />

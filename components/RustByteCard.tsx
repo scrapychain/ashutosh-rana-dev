@@ -9,7 +9,7 @@ export default function RustByteCard({ byte }: { byte: RustByte }) {
   const regionId = `byte-code-${byte.id}`
 
   return (
-    <article className="group flex min-w-0 flex-col border border-emerald-500/25 bg-emerald-500/[0.04] shadow-[0_0_35px_rgba(16,185,129,0.07)] transition hover:border-emerald-400/45 hover:shadow-[0_0_50px_rgba(16,185,129,0.12)]">
+    <article className="group flex min-w-0 flex-col overflow-hidden rounded-lg border border-emerald-500/25 bg-emerald-500/[0.04] shadow-[0_0_35px_rgba(16,185,129,0.07)] transition hover:border-emerald-400/45 hover:shadow-[0_0_50px_rgba(16,185,129,0.12)]">
       {/* Terminal title bar — toggles the code */}
       <button
         type="button"
